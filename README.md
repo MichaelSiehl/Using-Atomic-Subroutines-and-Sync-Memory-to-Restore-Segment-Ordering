@@ -2,10 +2,8 @@
 The content of this repository is currently in experimental state
 
 # 161125_src: STEP 1 - track the segment execution on every image
-<br />
 ###############################<br />
 source code:<br />
-<br />
 !____________________________________________________________<br />
 !<br />
 !********** 161124: to track the segment execution on every image:<br />
