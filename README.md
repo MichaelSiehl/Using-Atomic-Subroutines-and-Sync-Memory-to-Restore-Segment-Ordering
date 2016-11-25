@@ -9,7 +9,7 @@ SOURCE CODE (see the OOOPimsc_admImageStatus_CA.f90 file):<br />
 !<br />
 !********** 161124: to track the segment execution on every image:<br />
 subroutine OOOPimsc_subSyncMemory (Object_CA)<br />
-&nbsp;&nbsp;type (OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent (inout) :: Object_CA<br />
+&nbsp;&nbsp;type (OOOPimsc_adtImageStatus_CA), codimension[ * ], volatile, intent (inout) :: Object_CA<br />
 &nbsp;&nbsp;!<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;! encapsulate access to the F2008 sync memory statement because<br />
 &nbsp;&nbsp;sync memory ! this coarray fortran statement forms the unordered execution segments<br />
