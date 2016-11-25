@@ -2,7 +2,7 @@
 The content of this repository is currently in experimental state
 
 # 161125_src: STEP 1 - track the segment execution on every image
-###############################<br />
+###########################################<br />
 source code (see the OOOPimsc_admImageStatus_CA.f90 file):<br />
 !____________________________________________________________<br />
 !<br />
@@ -28,4 +28,55 @@ subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)<br 
 &nbsp;&nbsp;!<br />
 end subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA<br />
 !____________________________________________________________<br />
-###############################<br /> 
+###########################################<br />
+Output from programm execution with 11 coarray images:<br />
+ mpirun -np 11 ./a_gfortran.out<br />
+ entering segment           1 on image           1<br />
+ entering segment           2 on image           1<br />
+ entering segment           3 on image           1<br />
+ entering segment           4 on image           1<br />
+ entering segment           5 on image           1<br />
+ entering segment           1 on image           9<br />
+ entering segment           2 on image           9<br />
+ entering segment           3 on image           9<br />
+ entering segment           1 on image           2<br />
+ entering segment           2 on image           2<br />
+ entering segment           3 on image           2<br />
+ entering segment           4 on image           9<br />
+ entering segment           5 on image           9<br />
+ entering segment           1 on image          10<br />
+ entering segment           6 on image           9<br />
+ entering segment           7 on image           9<br />
+ entering segment           8 on image           9<br />
+ entering segment           4 on image           2<br />
+ entering segment           1 on image           3<br />
+ entering segment           2 on image           3<br />
+ entering segment           3 on image           3<br />
+ entering segment           2 on image          10<br />
+ entering segment           3 on image          10<br />
+ entering segment           1 on image           6<br />
+ entering segment           2 on image           6<br />
+ entering segment           3 on image           6<br />
+ entering segment           4 on image           6<br />
+ entering segment           5 on image           6<br />
+ entering segment           1 on image           7<br />
+ entering segment           2 on image           7<br />
+ entering segment           3 on image           7<br />
+ entering segment           6 on image           6<br />
+ entering segment           7 on image           6<br />
+ entering segment           8 on image           6<br />
+ entering segment           1 on image           8<br />
+ entering segment           2 on image           8<br />
+ entering segment           3 on image           8<br />
+ entering segment           5 on image           2<br />
+ entering segment           6 on image           2<br />
+ entering segment           1 on image           5<br />
+ entering segment           2 on image           5<br />
+ entering segment           3 on image           5<br />
+ entering segment           1 on image           4<br />
+ entering segment           2 on image           4<br />
+ entering segment           3 on image           4<br />
+ entering segment           1 on image          11<br />
+ entering segment           2 on image          11<br />
+ entering segment           3 on image          11<br />
+ ###########################################<br />
