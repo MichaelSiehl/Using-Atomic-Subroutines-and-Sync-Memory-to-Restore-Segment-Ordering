@@ -22,7 +22,6 @@ end subroutine OOOPimsc_subSyncMemory<br />
 ! private:<br />
 subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)<br />
 &nbsp;&nbsp;type (OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent (inout) :: Object_CA<br />
-&nbsp;&nbsp;integer(OOOGglob_kint) :: status = 0 ! error status<br />
 &nbsp;&nbsp;!<br />
 &nbsp;&nbsp;! increment the ImageSyncMemoryCount member atomically on the executing image only:<br />
 &nbsp;&nbsp;call atomic_add(Object_CA % m_atomic_intImageSyncMemoryCount, 1) ! atomic_add is Fortran 2015 syntax<br />
