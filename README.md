@@ -3,7 +3,8 @@ The content of this repository is currently in experimental state
 
 # 161125_src: STEP 1 - track the segment execution on every image
 ###########################################<br />
-source code (see the OOOPimsc_admImageStatus_CA.f90 file):<br />
+SOURCE CODE (see the OOOPimsc_admImageStatus_CA.f90 file):<br />
+==========================================================<br />
 !____________________________________________________________<br />
 !<br />
 !********** 161124: to track the segment execution on every image:<br />
@@ -29,8 +30,9 @@ subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)<br 
 end subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA<br />
 !____________________________________________________________<br />
 ###########################################<br />
-Output from programm execution with 11 coarray images:<br />
+OUTPUT (from programm execution with 11 coarray images):<br />
  mpirun -np 11 ./a_gfortran.out<br />
+==========================================================<br />
  entering segment           1 on image           1<br />
  entering segment           2 on image           1<br />
  entering segment           3 on image           1<br />
