@@ -1,7 +1,7 @@
 # Using-Atomic-Subroutines-and-Sync-Memory-to-Restore-Segment-Ordering
 The content of this repository is currently in experimental state
 
-# 161125_src: STEP 1 - track the execution segments on every image
+# STEP 1 (161125_src): - track the execution segments on every image
 ######################################################################################<br />
 SOURCE CODE (see the OOOPimsc_admImageStatus_CA.f90 file):<br />
 ==========================================================<br />
