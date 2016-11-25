@@ -17,7 +17,7 @@ subroutine OOOPimsc_subSyncMemory (Object_CA)<br />
 &nbsp;&nbsp;call OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA) ! increment the ImageSyncMemoryCount<br />
 &nbsp;&nbsp;!<br />
 end subroutine OOOPimsc_subSyncMemory<br />
-!<br />
+!____________________________________________________________<br />
 !********** 161124: track the segment execution on every image:<br />
 ! private:<br />
 subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)<br />
