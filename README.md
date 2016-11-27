@@ -115,12 +115,13 @@ end subroutine OOOPimsc_subSyncMemory<br />
 !____________________________________________________________<br />
 !********** 161124: track the execution segments on every image:<br />
 ! private:<br />
-subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)<br />
+subroutine OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)<br />
 &nbsp;&nbsp;type (OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent (inout) :: Object_CA<br />
 &nbsp;&nbsp;!<br />
-&nbsp;&nbsp;! increment the ImageSyncMemoryCount member atomically on the executing image only:<br />
-&nbsp;&nbsp;call atomic_add(Object_CA % m_atomic_intImageSyncMemoryCount, 1) ! atomic_add is Fortran 2015 syntax<br />
+&nbsp;&nbsp;! increment (by 1) the ImageSyncMemoryCount member atomically on the executing image only:<br />
+&nbsp;&nbsp;! 161126: every image uses its own array index (this_image()):<br />
+&nbsp;&nbsp;call atomic_add(Object_CA % mA_atomic_intImageSyncMemoryCount(this_image()), 1) ! atomic_add is Fortran 2015 syntax<br />
 &nbsp;&nbsp;!<br />
-end subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA<br />
+end subroutine OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA<br />
 !____________________________________________________________<br />
 ######################################################################################<br />
