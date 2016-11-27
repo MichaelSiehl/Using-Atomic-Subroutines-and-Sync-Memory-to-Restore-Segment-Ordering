@@ -82,9 +82,7 @@ OUTPUT (from programm execution with 11 coarray images):<br />
  entering segment           2 on image          11<br />
  entering segment           3 on image          11<br />
 ######################################################################################<br />
-# STEP 2 (161127_src): - instead of the scalar integer, we now use an integer array<br />
-# &nbsp;&nbsp;&nbsp;&nbsp; together with atomic subroutines, to allow a simple syntax for the segment ordering<br />
-# &nbsp;&nbsp;&nbsp;&nbsp; synchronization later on
+# STEP 2 (161127_src): - instead of the scalar integer, we now use an integer array together with atomic subroutines, to allow a simple syntax for the segment ordering synchronization later on<br />
 ######################################################################################<br />
 SOURCE CODE (see the OOOPimsc_admImageStatus_CA.f90 file):<br />
 ==========================================================<br />
