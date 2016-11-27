@@ -109,7 +109,7 @@ subroutine OOOPimsc_subSyncMemory (Object_CA)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;! encapsulate access to the sync memory statement herein<br />
 &nbsp;&nbsp;sync memory ! to allow tracking of the execution segments on every image<br />
 &nbsp;&nbsp;!<br />
-&nbsp;&nbsp;call OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA) ! increment the ImageSyncMemoryCount<br />
+&nbsp;&nbsp;call OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA (Object_CA) ! increment the ImageSyncMemoryCount<br />
 &nbsp;&nbsp;!<br />
 end subroutine OOOPimsc_subSyncMemory<br />
 !____________________________________________________________<br />
