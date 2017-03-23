@@ -33,56 +33,58 @@ end subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA
 ```
 OUTPUT (from programm execution with 11 coarray images):<br />
  mpirun -np 11 ./a_gfortran.out<br />
-==========================================================<br />
- entering segment           1 on image           1<br />
- entering segment           2 on image           1<br />
- entering segment           3 on image           1<br />
- entering segment           4 on image           1<br />
- entering segment           5 on image           1<br />
- entering segment           1 on image           9<br />
- entering segment           2 on image           9<br />
- entering segment           3 on image           9<br />
- entering segment           1 on image           2<br />
- entering segment           2 on image           2<br />
- entering segment           3 on image           2<br />
- entering segment           4 on image           9<br />
- entering segment           5 on image           9<br />
- entering segment           1 on image          10<br />
- entering segment           6 on image           9<br />
- entering segment           7 on image           9<br />
- entering segment           8 on image           9<br />
- entering segment           4 on image           2<br />
- entering segment           1 on image           3<br />
- entering segment           2 on image           3<br />
- entering segment           3 on image           3<br />
- entering segment           2 on image          10<br />
- entering segment           3 on image          10<br />
- entering segment           1 on image           6<br />
- entering segment           2 on image           6<br />
- entering segment           3 on image           6<br />
- entering segment           4 on image           6<br />
- entering segment           5 on image           6<br />
- entering segment           1 on image           7<br />
- entering segment           2 on image           7<br />
- entering segment           3 on image           7<br />
- entering segment           6 on image           6<br />
- entering segment           7 on image           6<br />
- entering segment           8 on image           6<br />
- entering segment           1 on image           8<br />
- entering segment           2 on image           8<br />
- entering segment           3 on image           8<br />
- entering segment           5 on image           2<br />
- entering segment           6 on image           2<br />
- entering segment           1 on image           5<br />
- entering segment           2 on image           5<br />
- entering segment           3 on image           5<br />
- entering segment           1 on image           4<br />
- entering segment           2 on image           4<br />
- entering segment           3 on image           4<br />
- entering segment           1 on image          11<br />
- entering segment           2 on image          11<br />
- entering segment           3 on image          11<br />
-######################################################################################<br />
+```fortran
+==========================================================
+ entering segment           1 on image           1
+ entering segment           2 on image           1
+ entering segment           3 on image           1
+ entering segment           4 on image           1
+ entering segment           5 on image           1
+ entering segment           1 on image           9
+ entering segment           2 on image           9
+ entering segment           3 on image           9
+ entering segment           1 on image           2
+ entering segment           2 on image           2
+ entering segment           3 on image           2
+ entering segment           4 on image           9
+ entering segment           5 on image           9
+ entering segment           1 on image          10
+ entering segment           6 on image           9
+ entering segment           7 on image           9
+ entering segment           8 on image           9
+ entering segment           4 on image           2
+ entering segment           1 on image           3
+ entering segment           2 on image           3
+ entering segment           3 on image           3
+ entering segment           2 on image          10
+ entering segment           3 on image          10
+ entering segment           1 on image           6
+ entering segment           2 on image           6
+ entering segment           3 on image           6
+ entering segment           4 on image           6
+ entering segment           5 on image           6
+ entering segment           1 on image           7
+ entering segment           2 on image           7
+ entering segment           3 on image           7
+ entering segment           6 on image           6
+ entering segment           7 on image           6
+ entering segment           8 on image           6
+ entering segment           1 on image           8
+ entering segment           2 on image           8
+ entering segment           3 on image           8
+ entering segment           5 on image           2
+ entering segment           6 on image           2
+ entering segment           1 on image           5
+ entering segment           2 on image           5
+ entering segment           3 on image           5
+ entering segment           1 on image           4
+ entering segment           2 on image           4
+ entering segment           3 on image           4
+ entering segment           1 on image          11
+ entering segment           2 on image          11
+ entering segment           3 on image          11
+ ```
+######################################################################################
 # STEP 2 (161127_src): - instead of the scalar integer, we now use an integer array together with atomic subroutines, to allow a simple syntax for the segment ordering synchronization later on<br />
 ######################################################################################<br />
 SOURCE CODE (see the OOOPimsc_admImageStatus_CA.f90 file):<br />
