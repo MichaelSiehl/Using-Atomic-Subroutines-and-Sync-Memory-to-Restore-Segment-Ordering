@@ -100,7 +100,7 @@ type, public :: OOOPimsc_adtImageStatus_CA
   !*****
   integer(atomic_int_kind) :: m_atomic_intImageActivityFlag = OOOPimscEnum_ImageActivityFlag % InitialWaiting
   !*****
-  integer(atomic_int_kind), dimension (1:OOOGglob_NumImages_UpperBound) :: mA_atomic_intImageSyncMemoryCount = 0 ! 161126
+  integer(atomic_int_kind), dimension (1:OOOGglob_NumImages_UpperBound) :: mA_atomic_intImageSyncMemoryCount=0
   !*****
   type (OOOEerroc_colError) :: m_UUerrocError ! error collection
   !
