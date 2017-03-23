@@ -18,6 +18,8 @@ subroutine OOOPimsc_subSyncMemory (Object_CA)
   call OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA) ! increment the ImageSyncMemoryCount
   !
 end subroutine OOOPimsc_subSyncMemory
+```
+```fortran
 !____________________________________________________________
 !********** 161124: track the execution segments on every image:
 ! private:
@@ -103,7 +105,9 @@ type, public :: OOOPimsc_adtImageStatus_CA
   type (OOOEerroc_colError) :: m_UUerrocError ! error collection
   !
 end type OOOPimsc_adtImageStatus_CA
-!___________________________________________________________
+!____________________________________________________________
+```
+```fortran
 !____________________________________________________________
 !
 !********** 161124: to track the execution segments on every image:
@@ -116,6 +120,8 @@ subroutine OOOPimsc_subSyncMemory (Object_CA)
   call OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA (Object_CA) ! increment the ImageSyncMemoryCount
   !
 end subroutine OOOPimsc_subSyncMemory
+```
+```fortran
 !____________________________________________________________
 !********** 161124: track the execution segments on every image:
 ! private:
@@ -129,3 +135,4 @@ subroutine OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA (Object
 end subroutine OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA
 !____________________________________________________________
 !######################################################################################
+```
