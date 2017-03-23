@@ -98,9 +98,11 @@ SOURCE CODE (see the OOOPimsc_admImageStatus_CA.f90 file):
 type, public :: OOOPimsc_adtImageStatus_CA
   private
   !*****
-  integer(atomic_int_kind) :: m_atomic_intImageActivityFlag = OOOPimscEnum_ImageActivityFlag % InitialWaiting
+  integer(atomic_int_kind) :: m_atomic_intImageActivityFlag = &
+                                         OOOPimscEnum_ImageActivityFlag % InitialWaiting
   !*****
-  integer(atomic_int_kind), dimension (1:OOOGglob_NumImages_UpperBound) :: mA_atomic_intImageSyncMemoryCount=0
+  integer(atomic_int_kind), dimension (1:OOOGglob_NumImages_UpperBound) :: &
+                                                    mA_atomic_intImageSyncMemoryCount = 0
   !*****
   type (OOOEerroc_colError) :: m_UUerrocError ! error collection
   !
@@ -116,8 +118,8 @@ subroutine OOOPimsc_subSyncMemory (Object_CA)
   !
   ! encapsulate access to the sync memory statement herein
   sync memory ! to allow tracking of the execution segments on every image
-  !
-  call OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA (Object_CA) ! increment the ImageSyncMemoryCount
+  ! increment the ImageSyncMemoryCount:
+  call OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)
   !
 end subroutine OOOPimsc_subSyncMemory
 ```
@@ -130,7 +132,7 @@ subroutine OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA (Object
   !
   ! increment (by 1) the ImageSyncMemoryCount member atomically on the executing image only:
   ! 161126: every image uses its own array index (this_image()):
-  call atomic_add(Object_CA % mA_atomic_intImageSyncMemoryCount(this_image()), 1) ! atomic_add is Fortran 2015 syntax
+  call atomic_add(Object_CA % mA_atomic_intImageSyncMemoryCount(this_image()), 1) ! F2015
   !
 end subroutine OOOPimscSAElement_atomic_increment_intImageSyncMemoryCount_CA
 !____________________________________________________________
