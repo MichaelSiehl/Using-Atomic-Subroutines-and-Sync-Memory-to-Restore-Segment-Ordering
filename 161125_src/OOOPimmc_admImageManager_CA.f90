@@ -91,7 +91,7 @@ end type OOOPimmc_adtImageManager_CA
 !***  Corresponding Coarray Declarations:  **********
 !****************************************************
 !***
-type (OOOPimmc_adtImageManager_CA), public, codimension[*], volatile, save :: OOOPimmcImageManager_CA_1
+type (OOOPimmc_adtImageManager_CA), public, codimension[*], save :: OOOPimmcImageManager_CA_1
 !
 !___________________________________________________________
 
@@ -113,7 +113,7 @@ contains
 !*******************************
 !
 subroutine OOOPimmcS_chrTeamMembersFileName_CA (Object_CA, chr_TeamMembersFileName, intImageNumber)
-  type (OOOPimmc_adtImageManager_CA), codimension[*], volatile, intent (inout) :: Object_CA
+  type (OOOPimmc_adtImageManager_CA), codimension[*], intent (inout) :: Object_CA
   character(kind=OOOGglob_kcha,len=*), intent (in) :: chr_TeamMembersFileName
   integer(OOOGglob_kint), intent (in) :: intImageNumber
   integer(OOOGglob_kint) :: status = 0 ! error status
@@ -134,7 +134,7 @@ subroutine OOOPimmcS_chrTeamMembersFileName_CA (Object_CA, chr_TeamMembersFileNa
 end subroutine OOOPimmcS_chrTeamMembersFileName_CA
 !**********
 subroutine OOOPimmcG_chrTeamMembersFileName_CA (Object_CA, chr_TeamMembersFileName, intImageNumber)
-  type (OOOPimmc_adtImageManager_CA), codimension[*], volatile, intent (inout) :: Object_CA
+  type (OOOPimmc_adtImageManager_CA), codimension[*], intent (inout) :: Object_CA
   character(kind=OOOGglob_kcha,len=*), dimension(1), intent (out) :: chr_TeamMembersFileName
   integer(OOOGglob_kint), intent (in) :: intImageNumber
   integer(OOOGglob_kint) :: status = 0 ! error status
@@ -182,7 +182,7 @@ end subroutine IIimmc_ErrorHandler
 logical(OOOGglob_klog) function IIimmc_ImageNumberBoundError_CA (Object_CA, intImageNumber)
   ! error handling routine
   ! checks if the image number does exist
-  type(OOOPimmc_adtImageManager_CA), codimension[*], volatile, intent(inout) :: Object_CA
+  type(OOOPimmc_adtImageManager_CA), codimension[*], intent(inout) :: Object_CA
   integer(OOOGglob_kint), intent(in) :: intImageNumber
   !
   IIimmc_ImageNumberBoundError_CA = .false.
