@@ -27,8 +27,18 @@ subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)
   type (OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent (inout) :: Object_CA
   !
   ! increment the ImageSyncMemoryCount member atomically on the executing image only:
-  call atomic_add(Object_CA % m_atomic_intImageSyncMemoryCount, 1) ! atomic_add is Fortran 2015 syntax
+  !call atomic_add(Object_CA % m_atomic_intImageSyncMemoryCount, 1) ! atomic_add is Fortran 2015 syntax
   !
+  ! Fortran 2008 syntax:
+  call atomic_ref(intTemp, Object_CA % m_atomic_intImageSyncMemoryCount)
+  intTemp = intTemp + 1
+  ! don't execute sync memory for local atomic_define:
+  call atomic_define(Object_CA % m_atomic_intImageSyncMemoryCount, intTemp)
+  !
+! test:
+call atomic_ref(intSegment, Object_CA % m_atomic_intImageSyncMemoryCount) ! only to produce a test-output:
+write(*,*) 'entering segment', intSegment, 'on image', this_image()
+!
 end subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA
 !____________________________________________________________
 !######################################################################################
