@@ -115,7 +115,7 @@ end type OOOPimsc_adtImageStatus_CA
 !***  Corresponding Coarray Declarations:  **********
 !****************************************************
 !***
-type (OOOPimsc_adtImageStatus_CA), public, codimension[*], volatile, save :: OOOPimscImageStatus_CA_1
+type (OOOPimsc_adtImageStatus_CA), public, codimension[*], save :: OOOPimscImageStatus_CA_1
 !___________________________________________________________
 
 
@@ -139,7 +139,7 @@ contains
 !**********
 subroutine OOOPimscS_atomic_intImageActivityFlag_CA (Object_CA, intImageActivityFlag, &
                                                    intImageNumber)
-  type (OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent (inout) :: Object_CA
+  type (OOOPimsc_adtImageStatus_CA), codimension[*], intent (inout) :: Object_CA
   integer(OOOGglob_kint), intent (in) :: intImageActivityFlag
   integer(OOOGglob_kint), intent (in) :: intImageNumber
   integer(OOOGglob_kint) :: status = 0 ! error status
@@ -165,7 +165,7 @@ logical(OOOGglob_klog) function OOOPimscG_check_atomic_intImageActivityFlag_CA (
   ! in order to hide the sync memory statement herein, this Getter does not allow
   ! to access the member directly, but instead does only allow to check the atomic member
   ! for specific values (this Getter is intented for synchronizations)
-  type (OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent (inout) :: Object_CA
+  type (OOOPimsc_adtImageStatus_CA), codimension[*], intent (inout) :: Object_CA
   integer(OOOGglob_kint), intent (in) :: intCheckImageActivityFlag
   integer(OOOGglob_kint) :: intImageActivityFlag
   integer(OOOGglob_kint) :: status = 0 ! error status
@@ -187,7 +187,7 @@ end function OOOPimscG_check_atomic_intImageActivityFlag_CA
 !
 !********** 161124: to track the segment execution on every image:
 subroutine OOOPimsc_subSyncMemory (Object_CA)
-  type (OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent (inout) :: Object_CA
+  type (OOOPimsc_adtImageStatus_CA), codimension[*], intent (inout) :: Object_CA
 
   !
                                                                 call OOOGglob_subSetProcedures &
@@ -203,7 +203,7 @@ end subroutine OOOPimsc_subSyncMemory
 !********** 161124: track the segment execution on every image:
 ! private:
 subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)
-  type (OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent (inout) :: Object_CA
+  type (OOOPimsc_adtImageStatus_CA), codimension[*], intent (inout) :: Object_CA
   integer(OOOGglob_kint) :: status = 0 ! error status
 integer(OOOGglob_kint) :: intSegment ! only to produce a test-output
   !
@@ -233,7 +233,7 @@ end subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA
 !
 !
 subroutine OOOPimsc_StructureConstructor_CA (Object_CA)
-  type (OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent (inout) :: Object_CA
+  type (OOOPimsc_adtImageStatus_CA), codimension[*], intent (inout) :: Object_CA
   !
                                                                 call OOOGglob_subSetProcedures ("OOOPimsc_StructureConstructor_CA")
 
@@ -269,7 +269,7 @@ end subroutine IIimsc_ErrorHandler
 logical(OOOGglob_klog) function IIimsc_ImageNumberBoundError_CA (Object_CA, intImageNumber)
   ! error handling routine
   ! checks if the image number does exist
-  type(OOOPimsc_adtImageStatus_CA), codimension[*], volatile, intent(inout) :: Object_CA
+  type(OOOPimsc_adtImageStatus_CA), codimension[*], intent(inout) :: Object_CA
   integer(OOOGglob_kint), intent(in) :: intImageNumber
   !
   IIimsc_ImageNumberBoundError_CA = .false.
