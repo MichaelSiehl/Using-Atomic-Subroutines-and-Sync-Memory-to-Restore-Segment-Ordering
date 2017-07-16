@@ -43,7 +43,7 @@ end subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA
 !____________________________________________________________
 !######################################################################################
 ```
-OUTPUT (from programm execution with 11 coarray images):<br />
+OUTPUT (from program execution with 11 coarray images):<br />
  mpirun -np 11 ./a_gfortran.out<br />
 ```fortran
 ==========================================================
