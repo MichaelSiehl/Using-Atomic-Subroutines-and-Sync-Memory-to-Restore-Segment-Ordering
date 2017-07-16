@@ -35,10 +35,10 @@ subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)
   ! don't execute sync memory for local atomic_define:
   call atomic_define(Object_CA % m_atomic_intImageSyncMemoryCount, intTemp)
   !
-! test:
-call atomic_ref(intSegment, Object_CA % m_atomic_intImageSyncMemoryCount) ! only to produce a test-output:
-write(*,*) 'entering segment', intSegment, 'on image', this_image()
-!
+  ! test:
+  call atomic_ref(intSegment, Object_CA % m_atomic_intImageSyncMemoryCount) ! only to produce a test-output:
+  write(*,*) 'entering segment', intSegment, 'on image', this_image()
+  !
 end subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA
 !____________________________________________________________
 !######################################################################################
