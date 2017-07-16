@@ -27,6 +27,7 @@ subroutine OOOPimscS_atomic_increment_intImageSyncMemoryCount_CA (Object_CA)
   type (OOOPimsc_adtImageStatus_CA), codimension[*], intent (inout) :: Object_CA
   !
   ! increment the ImageSyncMemoryCount member atomically on the executing image only:
+  !
   !call atomic_add(Object_CA % m_atomic_intImageSyncMemoryCount, 1) ! atomic_add is Fortran 2015 syntax
   !
   ! Fortran 2008 syntax:
